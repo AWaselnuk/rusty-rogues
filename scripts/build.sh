@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Format code to official language style
+cargo fmt
+
 # Compile the program for WASM
 cargo build --release --target wasm32-unknown-unknown
 
