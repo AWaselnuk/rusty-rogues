@@ -1,35 +1,12 @@
 use rltk::{GameState, Rltk, RGB};
 use specs::prelude::*;
-use specs_derive::Component;
 
+mod components;
+pub use components::*;
 mod map;
 pub use map::*;
 mod player;
 pub use player::*;
-
-// COMPONENTS
-#[derive(Component)]
-struct Position {
-    x: i32,
-    y: i32,
-}
-
-#[derive(Component)]
-struct Renderable {
-    glyph: rltk::FontCharType,
-    fg: RGB,
-    bg: RGB,
-}
-
-#[derive(Component)]
-struct LeftMover {}
-
-#[derive(Component, Debug)]
-struct Player {}
-
-pub fn xy_idx(x: i32, y: i32) -> usize {
-    (y as usize * 80) + x as usize
-}
 
 // SYSTEMS
 
