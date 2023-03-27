@@ -7,6 +7,8 @@ mod map;
 pub use map::*;
 mod player;
 pub use player::*;
+mod rect;
+pub use rect::Rect;
 
 pub struct State {
     ecs: World,
@@ -50,7 +52,7 @@ fn main() -> rltk::BError {
     gs.ecs.register::<Renderable>();
     gs.ecs.register::<Player>();
 
-    gs.ecs.insert(new_map());
+    gs.ecs.insert(new_map_rooms_and_corridors());
 
     // Add entities
     gs.ecs
